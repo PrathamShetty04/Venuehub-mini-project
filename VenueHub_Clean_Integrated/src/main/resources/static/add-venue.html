@@ -1,0 +1,265 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Add Venue | VenueHub</title> <link rel="stylesheet" href="style.css"> </head> <body> <header class="navbar"> <a href="index.html" class="logo"> Venue<span>Hub</span> </a> <nav> <a href="index.html">Home</a> <a href="owner-dashboard.html">Dashboard</a> <button class="logout-btn" onclick="logout()">Logout</button> </nav> </header> <main class="page-container"> <div class="page-title">
+<div>
+  <p class="eyebrow">Venue Owner</p>
+  <h1 id="venueFormTitle">Add your venue</h1>
+  <p>Tell customers about your venue and start receiving bookings.</p>
+</div>
+
+</div> <form id="venueForm" class="venue-form"><input type="hidden" id="editVenueId">
+<section class="form-section card">
+
+  <h2>Basic Information</h2>
+  <p class="form-description">
+    Provide the basic details of your venue.
+  </p>
+
+  <div class="form-group">
+    <label>Venue Name</label>
+    <input
+      type="text"
+      id="venueName"
+      placeholder="e.g. Royal Palace Banquet"
+      required
+    >
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="form-group">
+      <label>Venue Type</label>
+
+      <select id="venueType" required>
+        <option value="">Select type</option>
+        <option>Banquet Hall</option>
+        <option>Wedding Hall</option>
+        <option>Conference Hall</option>
+        <option>Party Hall</option>
+        <option>Resort</option>
+        <option>Hotel</option>
+        <option>Garden</option>
+        <option>Convention Centre</option>
+      </select>
+
+    </div>
+
+
+    <div class="form-group">
+      <label>Event Types</label>
+
+      <select id="eventTypes" multiple size="5" aria-describedby="eventTypesHelp">
+        <option value="All Events">All Events</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Birthday">Birthday</option>
+        <option value="Corporate">Corporate</option>
+        <option value="Engagement">Engagement</option>
+        <option value="Reception">Reception</option>
+        <option value="Conference">Conference</option>
+        <option value="Party">Party</option>
+        <option value="Other">Other</option>
+      </select>
+      <div id="eventTypesChecks" class="event-type-checks" role="group" aria-label="Event types"></div>
+      <small id="eventTypesHelp" class="form-description">Tick every event type this venue accepts. “All Events” clears the individual selections.</small>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="form-section card">
+
+  <h2>Location</h2>
+  <p class="form-description">
+    Help customers find your venue.
+  </p>
+
+  <div class="form-group">
+    <label>Address</label>
+
+    <textarea
+      id="address"
+      rows="3"
+      placeholder="Complete venue address"
+      required
+    ></textarea>
+  </div>
+
+
+  <div class="form-group">
+    <label for="mapUrl">Google Maps link (optional)</label>
+    <input type="url" id="mapUrl" placeholder="https://maps.google.com/..." inputmode="url">
+    <small class="form-description">Open your venue in Google Maps, choose Share, then Copy link and paste it here. Customers will get your exact venue link and directions.</small>
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" id="city" placeholder="Mumbai" required>
+    </div>
+
+    <div class="form-group">
+      <label>State</label>
+
+      <select id="state" required>
+        <option value="">Select state</option>
+        <option>Maharashtra</option>
+        <option>Delhi</option>
+        <option>Karnataka</option>
+        <option>Gujarat</option>
+        <option>Rajasthan</option>
+        <option>Telangana</option>
+        <option>Tamil Nadu</option>
+        <option>West Bengal</option>
+        <option>Uttar Pradesh</option>
+        <option>Kerala</option>
+      </select>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="form-section card">
+
+  <h2>Capacity & Pricing</h2>
+  <p class="form-description">
+    Set your venue's capacity and starting price.
+  </p>
+
+
+  <div class="form-row">
+
+    <div class="form-group">
+      <label>Minimum Capacity</label>
+      <input type="number" id="minCapacity" min="1" max="100000" step="1" inputmode="numeric" placeholder="50" required>
+    </div>
+
+    <div class="form-group">
+      <label>Maximum Capacity</label>
+      <input type="number" id="maxCapacity" min="1" max="100000" step="1" inputmode="numeric" placeholder="500" required>
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="form-group">
+      <label>Starting Price (₹)</label>
+      <input type="number" id="price" min="0.01" step="0.01" inputmode="decimal" placeholder="50000" required>
+    </div>
+
+    <div class="form-group">
+      <label>Pricing Unit</label>
+
+      <select id="priceUnit">
+        <option>Per Event</option>
+        <option>Per Plate</option>
+      </select>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="form-section card">
+
+  <h2>Amenities</h2>
+  <p class="form-description">
+    Select everything your venue provides.
+  </p>
+
+
+  <div class="amenities-grid">
+
+    <label class="amenity">
+      <input type="checkbox" value="Parking">
+      <span>🚗 Parking</span>
+    </label>
+
+    <label class="amenity">
+      <input type="checkbox" value="Catering">
+      <span>🍽️ Catering</span>
+    </label>
+
+    <label class="amenity">
+      <input type="checkbox" value="AC">
+      <span>❄️ Air Conditioning</span>
+    </label>
+
+    <label class="amenity">
+      <input type="checkbox" value="WiFi">
+      <span>📶 Wi-Fi</span>
+    </label>
+
+    <label class="amenity">
+      <input type="checkbox" value="Sound">
+      <span>🔊 Sound System</span>
+    </label>
+
+    <label class="amenity">
+      <input type="checkbox" value="Decoration">
+      <span>🌸 Decoration</span>
+    </label>
+
+    <label class="amenity">
+      <input type="checkbox" value="Stage">
+      <span>🎤 Stage</span>
+    </label>
+
+    <label class="amenity">
+      <input type="checkbox" value="Generator">
+      <span>⚡ Generator</span>
+    </label>
+
+  </div>
+
+</section>
+
+
+<section class="form-section card">
+
+  <h2>Venue Image</h2>
+  <p class="form-description">
+    Add a URL for your venue's main image.
+  </p>
+
+  <div class="form-group">
+
+    <label>Image URL</label>
+
+    <input
+      type="url"
+      id="imageUrl"
+      placeholder="https://example.com/venue.jpg"
+    >
+
+  </div>
+
+  <div id="imagePreview" class="image-preview">
+    <img id="imagePreviewImage" src="" alt="Venue image preview" style="width:100%;max-height:260px;object-fit:cover" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22450%22%3E%3Crect width=%22800%22 height=%22450%22 fill=%22%23e9edf2%22/%3E%3Ctext x=%22400%22 y=%22225%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%2314243a%22%3EImage unavailable%3C/text%3E%3C/svg%3E'">
+  </div>
+
+</section>
+
+
+<div class="form-actions">
+
+  <a href="owner-dashboard.html" class="outline-btn">
+    Cancel
+  </a>
+
+  <button type="submit" class="primary-btn">
+    Publish Venue
+  </button>
+
+</div>
+
+</form> </main> <script src="script.js"></script> </body> </html>

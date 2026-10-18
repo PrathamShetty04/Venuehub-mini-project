@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VenueHub | Find Your Perfect Venue</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        Venue<span>Hub</span>
+    </a>
+
+    <nav class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="venues.html">Venues</a>
+
+        <a href="#categories">Categories</a>
+
+        <a href="owner-dashboard.html">
+            List Your Venue
+        </a>
+
+        <a href="login.html" class="nav-login">
+            Login
+        </a>
+
+        <a href="register.html" class="nav-register">
+            Sign Up
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Find the perfect
+            <span>venue</span>
+            for your special day
+        </h1>
+
+        <p>
+            Discover and book beautiful halls,
+            banquet venues and event spaces across India.
+        </p>
+
+
+        <div class="search-box">
+
+            <div class="search-item">
+
+                <label>LOCATION</label>
+
+                <input
+                    id="homeLocation"
+                    type="text"
+                    placeholder="Mumbai, Delhi, Pune..."
+                >
+
+            </div>
+
+
+            <div class="search-item">
+
+                <label>EVENT TYPE</label>
+
+                <select id="homeEvent">
+
+                    <option value="">
+                        Any Event
+                    </option>
+
+                    <option value="Wedding">
+                        Wedding
+                    </option>
+
+                    <option value="Birthday">
+                        Birthday
+                    </option>
+
+                    <option value="Corporate">
+                        Corporate
+                    </option>
+
+                    <option value="Party">
+                        Party
+                    </option>
+
+                    <option value="Engagement">
+                        Engagement
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="search-item">
+
+                <label>GUESTS</label>
+
+                <input
+                    id="homeGuests"
+                    type="number"
+                    placeholder="100"
+                >
+
+            </div>
+
+
+            <button
+                class="search-button"
+                onclick="homeSearch()">
+
+                Search
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="categories">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Browse by Event
+        </h2>
+
+        <p class="section-subtitle">
+            Find the right venue for every occasion.
+        </p>
+
+
+        <div class="category-grid">
+
+            <a
+                href="venues.html?event=Wedding"
+                class="category-card">
+
+                <div class="category-icon">
+                    💍
+                </div>
+
+                <h3>Weddings</h3>
+
+                <p>
+                    Beautiful venues for your big day
+                </p>
+
+            </a>
+
+
+            <a
+                href="venues.html?event=Birthday"
+                class="category-card">
+
+                <div class="category-icon">
+                    🎂
+                </div>
+
+                <h3>Birthdays</h3>
+
+                <p>
+                    Celebrate with family and friends
+                </p>
+
+            </a>
+
+
+            <a
+                href="venues.html?event=Corporate"
+                class="category-card">
+
+                <div class="category-icon">
+                    💼
+                </div>
+
+                <h3>Corporate</h3>
+
+                <p>
+                    Professional spaces for your team
+                </p>
+
+            </a>
+
+
+            <a
+                href="venues.html?event=Party"
+                class="category-card">
+
+                <div class="category-icon">
+                    🥂
+                </div>
+
+                <h3>Parties</h3>
+
+                <p>
+                    Host unforgettable celebrations
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Popular Venues</h2>
+        <p class="section-subtitle">Explore venues listed by owners on VenueHub.</p>
+        <div id="featuredVenues" class="venue-grid">
+            <div class="empty-state" style="grid-column:1/-1;text-align:center;padding:36px 20px">Loading available venues…</div>
+        </div>
+        <div class="form-actions" style="justify-content:center;margin-top:24px"><a href="venues.html" class="btn btn-secondary">Explore all venues</a></div>
+    </div>
+</section>
+
+
+<div class="container">
+
+    <div class="cta">
+
+        <h2>
+            Own a venue?
+        </h2>
+
+        <p>
+            List your venue on VenueHub and reach
+            thousands of customers.
+        </p>
+
+        <a
+            href="register.html"
+            class="btn">
+
+            List Your Venue
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="logo">
+                Venue<span>Hub</span>
+            </div>
+
+            <p>
+                India's platform for discovering
+                and booking event venues.
+            </p>
+
+        </div>
+
+        <div>
+            <h3>Customer FAQ</h3>
+            <a href="faq.html#customers">Customer FAQ</a>
+        </div>
+
+        <div>
+            <h3>Owner FAQ</h3>
+            <a href="faq.html#owners">Owner FAQ</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 VenueHub. All rights reserved.
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
